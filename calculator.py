@@ -8,7 +8,7 @@ st.title("🧮 Калькулятор формулы")
 st.markdown("Формула: **(X × Y) - 1%**")
 st.write("---")
 
-# Специальный стиль, чтобы поля были визуально крупными и удобными для тапа пальцем
+# Специальный стиль для увеличения размера текста в полях
 st.markdown("""
     <style>
     div[data-baseweb="input"] {
@@ -17,17 +17,16 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# Используем текстовые поля. При клике на них на телефоне зажмите поле пальцем, 
-# либо посмотрите на панель подсказок клавиатуры — там появится кнопка "Вставить" (Paste)
-x_input = st.text_input("Вставьте или введите первое число (X):", value="", placeholder="Нажмите сюда и выберите 'Вставить'")
-y_input = st.text_input("Вставьте или введите второе число (Y):", value="", placeholder="Оставьте пустым для 75.66")
+# Короткие и понятные заголовки полей
+x_input = st.text_input("Вставь сумму (X):", value="", placeholder="Нажми сюда и вставь число")
+y_input = st.text_input("Вставь множитель (Y):", value="", placeholder="Оставь пустым для 75.66")
 
 # Переменные для вычислений
 x = None
 y = None
 error_msg = ""
 
-# Обработка данных с очисткой от пробелов и заменой запятых
+# Обработка данных
 if x_input:
     try:
         x = float(x_input.replace(',', '.').strip())
@@ -45,7 +44,7 @@ elif x is not None:
 st.write("---")
 st.subheader("📊 Результаты расчётов:")
 
-# Если данные введены корректно — считаем
+# Расчет
 if x is not None and y is not None and not error_msg:
     product = x * y
     result_int = round(product * 0.99)
@@ -61,7 +60,7 @@ if x is not None and y is not None and not error_msg:
     st.write("---")
     st.subheader("📋 Копирование результата:")
 
-    # Кнопка копирования (она работает отлично на всех устройствах, так как запись в буфер разрешена)
+    # Кнопка копирования
     if st.button("📋 КОПИРОВАТЬ РЕЗУЛЬТАТ", use_container_width=True, type="primary"):
         js_code = f"""
         <script>
@@ -76,4 +75,4 @@ if x is not None and y is not None and not error_msg:
 elif error_msg:
     st.error(error_msg)
 else:
-    st.info("👋 Пожалуйста, вставьте число X, чтобы увидеть расчет.")
+    st.info("👋 Пожалуйста, вставьте сумму (X), чтобы увидеть расчет.")
