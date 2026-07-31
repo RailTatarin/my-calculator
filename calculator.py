@@ -2,7 +2,7 @@ import streamlit as st
 import streamlit.components.v1 as components
 
 # Настройка страницы браузера
-st.set_page_config(page_title="Калькулятор Parity", page_icon="🧮")
+st.set_page_config(page_title="Калькулятор карт", page_icon="🧮")
 
 st.title("🧮 Калькулятор Parity")
 st.markdown("Формула расчёта: **(Сумма USDT × Комиссия Parity) - 1%**")
