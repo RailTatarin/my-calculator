@@ -5,7 +5,7 @@ import streamlit.components.v1 as components
 st.set_page_config(page_title="Калькулятор карт", page_icon="🧮")
 
 st.title("🧮 Калькулятор карт")
-st.markdown("Формула расчёта: **(Сумма USDT × Комиссия парити) - 1%**")
+st.markdown("Формула расчёта: **(Сумма USDT × Курс парити) - 1%**")
 st.write("---")
 
 # Специальный стиль для увеличения размера текста в полях
