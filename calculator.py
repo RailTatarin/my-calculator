@@ -19,7 +19,7 @@ st.markdown("""
 
 # Поля ввода с вашими новыми названиями
 x_input = st.text_input("сумма в USDT (к получению):", value="", placeholder="Вставь число")
-y_input = st.text_input("комиссия парити:", value="", placeholder="Оставь пустым для 75.66")
+y_input = st.text_input("курс парити:", value="", placeholder="Оставь пустым для 75.66")
 
 # Переменные для вычислений
 x = None
@@ -37,7 +37,7 @@ if y_input:
     try:
         y = float(y_input.replace(',', '.').strip())
     except ValueError:
-        error_msg = "❌ Ошибка: Введите корректное число в поле комиссии Parity."
+        error_msg = "❌ Ошибка: Введите корректное число в поле курс Parity."
 elif x is not None:
     # Если сумма введена, а комиссия пустая — подставляем значение по умолчанию
     y = 75.66
