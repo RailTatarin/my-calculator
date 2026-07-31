@@ -4,8 +4,8 @@ import streamlit.components.v1 as components
 # Настройка страницы браузера
 st.set_page_config(page_title="Калькулятор карт", page_icon="🧮")
 
-st.title("🧮 Калькулятор Parity")
-st.markdown("Формула расчёта: **(Сумма USDT × Комиссия Parity) - 1%**")
+st.title("🧮 Калькулятор карт")
+st.markdown("Формула расчёта: **(Сумма USDT × Комиссия парити) - 1%**")
 st.write("---")
 
 # Специальный стиль для увеличения размера текста в полях
@@ -19,7 +19,7 @@ st.markdown("""
 
 # Поля ввода с вашими новыми названиями
 x_input = st.text_input("сумма в USDT (к получению):", value="", placeholder="Вставь число")
-y_input = st.text_input("комиссия Parity:", value="", placeholder="Оставь пустым для 75.66")
+y_input = st.text_input("комиссия парити:", value="", placeholder="Оставь пустым для 75.66")
 
 # Переменные для вычислений
 x = None
